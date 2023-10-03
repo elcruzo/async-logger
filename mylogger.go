@@ -40,7 +40,7 @@ func (l *Logger) startLogger() {
 		for {
 			select {
 			case logMessage := <-l.logChannel:
-				logLine := fmt.Sprintf("[%s] %s\n", time.Now().Format("2006-01-02 15:04:05"), logMessage)
+				logLine := fmt.Sprintf("[%s] %s\n", time.Now().Format("2023-01-02 15:04:05"), logMessage)
 				_, err := file.WriteString(logLine)
 				if err != nil {
 					fmt.Printf("Error writing to log file: %v\n", err)
